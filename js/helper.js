@@ -13,21 +13,27 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
+var HTMLheaderRole = '<span class="roleSpan">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><a href="%data%" target="_blank" rel="tooltip" title="%title%"><img src="%icon%" alt="github-icon" class="contactLogo"></img></li>';
+var HTMLSkype = '<li class="flex-item"><script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>' +
+'<div id="SkypeButton_Call_nazanin.delam_1" class="skypeBtn">' +
+  '<script type="text/javascript">' +
+    'Skype.ui({' +
+      '"name": "dropdown",' +
+      '"element": "SkypeButton_Call_nazanin.delam_1",' +
+      '"participants": ["nazanin.delam"],' +
+      '"imageSize": 32' +
+    '});' +
+  '</script>' +
+'</div></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLwelcomeMsg = '<em class="welcome-message">%data%</em>';
 
 var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item"><span class="white-text label label-primary">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -53,18 +59,24 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a href="#" class="location-text course-text">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var bubbleChartTriggerButton = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#skillModal">Visualize my skills</button>';
+var internationalizeButton = '<button id="internationalizeBtn">Internationalize</button>';
 var googleMap = '<div id="map"></div>';
+
+
+var bubbleChart =  '<div class="bubbleChart"/>';
+var barChart = 	'<div id="wrapper"></div>';
 
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
 $(document).ready(function() {
-  $('button').click(function() {
-    var iName = inName() || function(){};
+  var name = $('#name').html();
+  $('#internationalizeBtn').click(function() {
+    var iName = utils.inName(name) || function(){};
     $('#name').html(iName);  
   });
 });
@@ -85,7 +97,7 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  logClicks(loc.pageX, loc.pageY);
 });
 
 
@@ -124,12 +136,12 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    locations.push(bio.contacts.location.title);
 
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+      locations.push(education.schools[school].city);
     }
 
     // iterates through work locations and appends each location to
@@ -137,7 +149,6 @@ function initializeMap() {
     for (var job in work.jobs) {
       locations.push(work.jobs[job].location);
     }
-
     return locations;
   }
 
@@ -170,7 +181,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+       infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -233,11 +244,11 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+  map.fitBounds(mapBounds);
+});

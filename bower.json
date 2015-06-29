@@ -1,0 +1,23 @@
+{
+  "name": "Resume",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Nazanin1369/UdacityResume",
+  "authors": [
+    "Nazanin Delam"
+  ],
+  "description": "Udacity Resume Project",
+  "main": "index.html",
+  "keywords": [
+    "resume",
+    "javascript"
+  ],
+  "license": "Nazanin Delam",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^1.0.0",
+    "webcomponentsjs": "^0.7.2"
+  }
+}

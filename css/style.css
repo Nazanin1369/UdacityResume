@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #bce8f1!important;
   line-height: 48px;
   display: inline;
 }
@@ -23,7 +23,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #999999!important;
   line-height: 29px;
   padding: 10px;
 }
@@ -31,14 +31,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #000000!important;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4A4A4A!important;
   line-height: 17px;
 }
 
@@ -52,7 +52,7 @@ h2, h3, h4, h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999999!important;
   line-height: 16px;
   float: left;
 }
@@ -60,10 +60,14 @@ h2, h3, h4, h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999999!important;
   line-height: 16px;
   float: right;
 
+}
+
+.course-text{
+   float: none;
 }
 
 p {
@@ -73,7 +77,7 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: royalblue!important;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -82,41 +86,56 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #F3F3F3!important;
   line-height: 28px;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #bce8f1!important;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #F5AE23!important;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #F5AE23!important;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color:#FFFFFF!important;
+  font-size: inherit!important;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #F3F3F3!important;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #4A4A4A!important;
 }
 
+.contactLogo{
+  height: 50px;
+}
+
+.panelLogo{
+  margin-top: -40px;
+  margin-left: -28px;
+  height: 50px;
+}
+
+.roleSpan{
+   margin-left: 10px;
+   font-weight: 500;
+}
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: lightslategray!important;
 }
 
 .flex-box {
@@ -144,6 +163,8 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  margin-top: -45px;
+
 }
 
 img {
@@ -207,9 +228,58 @@ span {
   padding-bottom: 5%;
 }
 
+
+.bubbleChart {
+  min-width: 100px;
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+
+.bubbleChart svg{
+  /*background: #000000;*/
+}
+
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
     display: block;
   }
+}
+
+.project-entry img {
+  max-width: 240px;
+  max-width: 240px;
+  border: 1px solid #D7D3D3;
+  margin: 10px;
+  width: 100%;
+}
+
+#biopic {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+}
+
+
+#xaxis .domain {
+		fill:none;
+		stroke:#000;
+}
+#xaxis text, #yaxis text {
+		font-size: 12px;
+}
+  
+#wrapper{
+  text-align: center;
+}  
+
+/*
+Skype
+*/
+.skypeBtn{
+    margin-top: -27px;
+    margin-left: -41px;
+    margin-bottom: -20px;
 }

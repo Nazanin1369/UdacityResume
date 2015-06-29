@@ -22,8 +22,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-
+ <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+ <link href="css/style.css" rel="stylesheet" type="text/css">
+ <link href="css/animate.css" rel="stylesheet" type="text/css"></link>
+ <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
   Document Object Model (DOM). The DOM is a tree that contains information
@@ -37,7 +40,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   the DOM. jQuery is fast and easy to use, but it doesn't do anything
   you can't accomplish with vanilla (regular) JavaScript.
   -->
-  <script src="js/jQuery.js"></script>
+  <script src="bower_components/jQuery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="http://phuonghuynh.github.io/js/bower_components/d3-transform/src/d3-transform.js"></script>
+  <script src="bower_components/cafej/src/misc.js"></script>
+  <script src="bower_components/cafej/src/micro-observer.js"></script>
+  <script src="bower_components/microplugin/src/microplugin.js"></script>
+  <script src="js/bubble-chart.js"></script>
+  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
+  <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
@@ -46,8 +61,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
-
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
@@ -63,22 +78,66 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class='flex-box'></ul>
     </div>
     <div style='clear: both;'></div>
-    <div id="workExperience" class='gray'>
+   <!-- <div id="workExperience" class='gray'>
       <h2>Work Experience</h2>
+    </div>-->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title "> <a class="navbar-brand" href="#"><img src="images/work.svg" class="panelLogo"/></a>Work Experience</h3>
+        </div>
+      <div class="panel-body" id="workExperience"></div>
     </div>
-    <div id="projects">
+   <!-- <div id="projects">
       <h2>Projects</h2>
+    </div>-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title "><a class="navbar-brand" href="#"><img src="images/projects.svg" class="panelLogo"/></a>Projects</h3>
+      </div>
+      <div class="panel-body" id="projects"></div>
     </div>
-    <div id="education" class='gray'>
+
+    <!--<div id="education" class='gray'>
       <h2>Education</h2>
+    </div>-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title "><a class="navbar-brand" href="#"><img src="images/education.svg" class="panelLogo"/></a>Education</h3>
+      </div>
+      <div class="panel-body" id="education"></div>
     </div>
-    <div id="mapDiv">
+    <!--<div id="skillChart">
+        <h2>Skills Visualization</h2>
+    </div>-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        
+        <h3 class="panel-title "><a class="navbar-brand" href="#"><img src="images/data.svg" class="panelLogo"/></a>Skills Visualization</h3>
+      </div>
+      <div class="panel-body" id="skillChart"></div>
+    </div>
+    <!--<div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
+    </div>-->
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title "><a class="navbar-brand" href="#"><img src="images/locations.svg" class="panelLogo"/></a>Where I've Lived and Worked</h3>
+      </div>
+      <div class="panel-body" id="mapDiv"></div>
     </div>
-    <div id="letsConnect" class='dark-gray'>
+    
+    <!--<div id="letsConnect" class='dark-gray'>
       <h2 class='orange center-text'>Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
+    </div>-->
+     <div  id="letsConnect" class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title ">Let's Connect</h3>
+      </div>
+      <div class="panel-body">
+         <ul id="footerContacts" class="flex-box">
+      </div>
     </div>
   </div>
 
