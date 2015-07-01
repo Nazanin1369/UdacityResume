@@ -15,7 +15,7 @@
 
 h1 {
   font-size: 40px;
-  color: #bce8f1!important;
+  color: royalblue!important;
   line-height: 48px;
   display: inline;
 }
@@ -29,7 +29,6 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
   color: #000000!important;
   line-height: 22px;
@@ -88,6 +87,11 @@ a {
   font-size: 18px;
   color: #F3F3F3!important;
   line-height: 28px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 #skillsH3 {
@@ -129,13 +133,15 @@ a {
   height: 50px;
 }
 
-.roleSpan{
+.role-span{
    margin-left: 10px;
    font-weight: 500;
 }
+
+
 /* TODO: Replace with image later */
-#header {
-  background-color: lightslategray!important;
+#main-header{
+  background-color: #01bacb!important;
 }
 
 .flex-box {
@@ -147,12 +153,39 @@ a {
   padding: 10px;
 }
 
+.skills-flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
 .center-content {
-  padding-top: 2.5%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 2.5%
 }
+
+
+.top-header-content {
+  padding-top: 2.5%;
+}
+
+.main-header-content {
+  padding-bottom: 2.5%;
+  background-color: antiquewhite;
+
+}
+
+#main-header-left{
+  width: 40%;
+}
+
+#main-header-right{
+  width: 100%;
+}
+
 
 ul {
   list-style-type: none;
@@ -161,14 +194,58 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 300px;
   display: none;
-  margin-top: -45px;
-
+  border-radius: 50%;
+  margin-top: 30px;
 }
 
 img {
   padding: 10px;
+}
+
+.header-list{
+  width: 800px;
+  float: right;
+}
+
+.contact-list{
+  float:right;
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-right: -40px;
+}
+
+.contact-item{
+  padding-top: 15px;
+}
+
+.welcome-Msg{
+  float: left;
+  width: 700px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.detailed-msg{
+  font-size:  18px;
+  color: #F3F3F3!important;
+  font-style: italic;
+  margin-top: -23px;
+  margin-left: 30px;
+  line-height: 25px;
+}
+
+.skills-label{
+  width: 700px;
+}
+
+.skill-item{
+  padding: 5px;
 }
 
 /* Bar chart stuff */
@@ -189,6 +266,78 @@ span {
 
 #letsConnect {
   text-align: center;
+}
+
+@media only screen and (min-width: 968px) and (max-width: 1190px) {
+  .welcome-Msg{
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 967px) {
+  .welcome-Msg{
+    width: 442px;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 799px) {
+  .welcome-Msg{
+    width: 420px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 749px) {
+  .welcome-Msg{
+    width: 559px;
+  }
+}
+
+@media only screen and (min-width: 657px) and (max-width: 699px) {
+  .welcome-Msg{
+    width: 520px;
+  }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 656px) {
+  .welcome-Msg{
+    width: 505px;
+  }
+}
+
+@media only screen and (min-width: 588px) and (max-width: 639px) {
+  .welcome-Msg{
+    width: 458px;
+  }
+}
+
+@media only screen and (min-width: 565px) and (max-width: 639px) {
+  .welcome-Msg{
+    width: 438px;
+  }
+}
+
+@media only screen and (min-width: 523px) and (max-width: 564px) {
+  .welcome-Msg{
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 490px) and (max-width: 522px) {
+  .welcome-Msg{
+    width: 370px;
+  }
+}
+
+@media only screen and (min-width: 449px) and (max-width: 488px) {
+  .welcome-Msg{
+    width: 330px;
+  }
+}
+
+@media only screen and (max-width: 448px) {
+  .welcome-Msg{
+    width: 285px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -228,18 +377,6 @@ span {
   padding-bottom: 5%;
 }
 
-
-.bubbleChart {
-  min-width: 100px;
-  max-width: 700px;
-  height: 700px;
-  margin: 0 auto;
-}
-
-
-.bubbleChart svg{
-  /*background: #000000;*/
-}
 
 @media only screen and (min-width: 750px) {
   #skillsH3,

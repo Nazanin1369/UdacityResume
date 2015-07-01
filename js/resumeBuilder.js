@@ -1,5 +1,5 @@
 var bio = {
-	"name": "Nazanin Delam",
+	"name": "Nazanin Delam  ",
 	"role": "Software Developer ||", 
 	"contacts":{
 		"location": {
@@ -23,37 +23,57 @@ var bio = {
 			"title": "nazanindelam"
 		}
 	},
-	"welcomeMessage": "Welcome to my resume review page!",
-	"skills": [ "AngularJS", "Java", "JavaScript", "Parallel Programming", "Algorithms"],
+	"welcomeMessage": " a bit about me!",
+	"detailedMessage": "Highly skilled Java programmer and front-end developer with nearly 4 years of experience" +
+						"in software engineering, web application development and system enhancement for better performance. ",
+	"skills1": [ "AngularJS", "Java Programming", "JavaScript"],
+	"skills2": ["Parallel Programming", "Algorithms", "Compilers"],
+	"skills3": [ "Responsive design", "Unit testing", "Debugging"],
 	"bioPic": "images/me.png",
 	"display": function(){
-		if(bio.name){
-			$("#header").append(HTMLheaderName.replace("%data%", bio.name));
-		}
-		if(bio.role){
-			$("#header").append(HTMLheaderRole.replace("%data%", bio.role));
+
+		if(bio.name && bio.role){
+			var header = HTMLheaderName.replace("%data%", bio.name);
+			$("#top-header").append(header.replace("%role%", bio.role));
 		}
 		if(bio.contacts){
 			for(i in bio.contacts){
 				var formattedcontact = HTMLcontactGeneric.replace("%data%", bio.contacts[i].url);
 				formattedcontact = formattedcontact.replace("%icon%", bio.contacts[i].src);
 				(bio.contacts[i].title) && (formattedcontact = formattedcontact.replace("%title%", bio.contacts[i].title));
-				$("#header").append($("#topContacts").append(formattedcontact));
+				$("#main-header").append($("#main-header-right").append($("#topContacts").append(formattedcontact)));
 				$("#footerContacts").append(formattedcontact);
 			}	
-			$("#header").append($("#topContacts").append(HTMLSkype));
-			$("a").tooltip({'placement': 'right','content':'html'});
-		}
-		if(bio.bioPic){
-			$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+			$("a").tooltip({'placement': 'left','content':'html'});
 		}
 		if(bio.welcomeMessage){
-			$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+			$("#main-header").append($("#main-header-right").append($("#welcomeMsg").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage))));
+			$("#main-header").append($("#main-header-right").append($("#welcomeMsgDetail").
+				append(HTMLwelcomeMsgDetail.replace("%data%", bio.detailedMessage))));
 		}
-		if(bio.skills.length > 0){
-			$("#header").append(HTMLskillsStart);
-			for(skill in bio.skills){
-				$("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
+		
+		if(bio.bioPic){
+			$("#main-header").append($("#main-header-left").append(HTMLbioPic.replace("%data%", bio.bioPic)));
+		}
+		(bio.skills1.length > 0 || bio.skills1.length > 0 || bio.skills1.length > 0) && 
+				($("#main-header").append($("#main-header-right").append(HTMLSkillLabel)));
+
+		if(bio.skills1.length > 0){
+			$("#main-header").append($("#main-header-right").append($("#skills").append(HTMLskills1Start)));
+			for(i in bio.skills1){
+				$("#skills1").append(HTMLskills.replace("%data%", bio.skills1[i]));
+			}
+		};
+		if(bio.skills2.length > 0){
+			$("#main-header").append($("#main-header-right").append($("#skills").append(HTMLskills2Start)));
+			for(i in bio.skills2){
+				$("#skills2").append(HTMLskills.replace("%data%", bio.skills2[i]));
+			}
+		};
+		if(bio.skills3.length > 0){
+			$("#main-header").append($("#main-header-right").append($("#skills").append(HTMLskills3Start)));
+			for(i in bio.skills3){
+				$("#skills3").append(HTMLskills.replace("%data%", bio.skills3[i]));
 			}
 		};
 	}
@@ -182,7 +202,7 @@ var projects = {
 			"title": "Hospital Information System (HIS)",
 			"dates": 2012,
 			"description" : "Hospital Information System for Clinical part of Airline company",
-			"images": []				 
+			"images": ["images/p1.jpg"]				 
 		},
 		{
 			"title": "Accountong System",
@@ -191,7 +211,7 @@ var projects = {
 							"Java programming and SQL server database. Enabled numerous functionalities, " +
 							"including exchanges between business firms, goods purchasing, payments, cash receipts, " +
 							"and salaries record. Tested system using JUnit and used GIT for source versioning",
-			"images": []
+			"images": ["images/p2.png"]
 		},
 		{
 			"title": "Search Engine",
@@ -200,17 +220,19 @@ var projects = {
 							"indexed webpages, saving cache for improved search functionality. Utilized numerous advanced tools, " +
 							"including UML Maven, MySQL, Hibernate, JSP, Tomcat, and Spring. Analyzed text and performed fuzzy string matching " +
 							"with Apache, Lucene, Tika, and Luke. Developed software with Agile methodology.",
-			"images": []
+			"images": ["images/p3.jpg", "images/p5.jpg", "images/p4.png"]
 		}
 	],
 	"display": function(){
 		if(projects.projects.length > 0){
-			for(project in projects.projects){
+			for(i in projects.projects){
 				$("#projects").append(HTMLprojectStart);
-				$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[project].title));
-				$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[project].dates));
-				$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[project].description));
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images));
+				$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
+				$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
+				$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
+				for(var j in projects.projects[i].images){
+					$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
+				}	
 			}
 		}
 		

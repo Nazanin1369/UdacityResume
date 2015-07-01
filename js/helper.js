@@ -12,28 +12,21 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span class="roleSpan">%data%</span><hr/>';
+var HTMLheaderName = '<h1 id="name">%data%<small>%role%</small></h1>';
+var HTMLheaderRole = '';
 
-var HTMLcontactGeneric = '<li class="flex-item"><a href="%data%" target="_blank" rel="tooltip" title="%title%"><img src="%icon%" alt="github-icon" class="contactLogo"></img></li>';
-var HTMLSkype = '<li class="flex-item"><script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>' +
-'<div id="SkypeButton_Call_nazanin.delam_1" class="skypeBtn">' +
-  '<script type="text/javascript">' +
-    'Skype.ui({' +
-      '"name": "dropdown",' +
-      '"element": "SkypeButton_Call_nazanin.delam_1",' +
-      '"participants": ["nazanin.delam"],' +
-      '"imageSize": 32' +
-    '});' +
-  '</script>' +
-'</div></li>';
+var HTMLcontactGeneric = '<li class="flex-item contact-item"><a href="%data%" target="_blank" rel="tooltip" title="%title%"><img src="%icon%" alt="github-icon" class="contactLogo"></img></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<em class="welcome-message">%data%</em>';
+var HTMLwelcomeMsg = '<h1>Hello!  <small class="welcome-message">%data%</small></h1>';
+var HTMLwelcomeMsgDetail = '<p class="detailed-msg">%data%</p>';
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text label label-primary">%data%</span></li>';
+var HTMLSkillLabel = '<div class="skills-label"><h3>Skills at a Glance:</h3></div>';
+var HTMLskills1Start = '<ul id="skills1" class="skills-flex-box"></ul>';
+var HTMLskills2Start = '<ul id="skills2" class="skills-flex-box"></ul>';
+var HTMLskills3Start = '<ul id="skills3" class="skills-flex-box"></ul>';
+var HTMLskills = '<li class="flex-item skill-item"><span class="white-text label label-primary">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
