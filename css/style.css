@@ -100,6 +100,10 @@ a {
   display: none;
 }
 
+#skills{
+  float: left;
+}
+
 .orange {
   background-color: #F5AE23!important;
 }
@@ -172,10 +176,21 @@ a {
 
 #top-header {
 	background-color: white;
+  z-index: 999;
 }
 
 .scroll-a {
 	cursor: pointer;	
+}
+
+.nav-ul{
+  float: right;
+}
+
+.nav-ul li{
+  float: right;
+  padding-left: 20px;
+  height: 50px;
 }
 
 
@@ -252,9 +267,8 @@ img {
 }
 
 .skills-label{
-  width: 700px;
-  margin-left: 360px;
   margin-bottom: -20px;
+  float: left;
 }
 
 .skill-item{
@@ -264,6 +278,14 @@ img {
 .skills-h3{
   font-size: 16px;
   color: #F3F3F3!important;
+}
+
+.fixed {
+  position: fixed;
+  top:0; 
+  left:0;
+  width: 100%; 
+  margin: 0px;
 }
 
 /* Bar chart stuff */
@@ -294,7 +316,7 @@ span {
 }
 
 #mapDiv {
-  height: 400px;
+  height: 500px;
   width: 100%;
   padding-bottom: 5%;
 }
@@ -319,81 +341,81 @@ span {
   
 #wrapper{
   text-align: center;
+  float: left;
 }  
 
-.fixed {
-  position: fixed;
-  top:0; 
-  left:0;
-  width: 100%; 
-  margin: 0px;
-}
-
-.sticky{
-  background-color: #FFFFFF;
-}
-
-.nav-ul{
-  float: right;
-  
-}
-
-.nav-ul li{
-  float: right;
-  padding-left: 20px;
-  height: 50px;
-}
 
 /*
 * Media
 */
 
 @media only screen and (min-width: 1550px){
- .welcome-Msg{
+ .welcome-Msg {
    width: 800px;
  }
 }
 
 
 @media only screen and (min-width: 1191px) and (max-width: 1253px) {
- .welcome-Msg{
+ .welcome-Msg,
+ .skills-label {
    width: 500px;
  }
 }
 
 
 @media only screen and (min-width: 968px) and (max-width: 1190px) {
-  .welcome-Msg{
-    width: 500px;
+  .welcome-Msg,
+  .skills-label {
+    width: 470px;
   }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 967px) {
-  .welcome-Msg{
-    width: 442px;
+@media only screen and (min-width: 914px) and (max-width: 967px) {
+  .welcome-Msg,
+  .skills-label {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 875px) and (max-width: 913px) {
+  .welcome-Msg,
+  .skills-label {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 874px) {
+  .welcome-Msg,
+  .skills-label {
+    width: 435px;
   }
 }
 
 @media only screen and (min-width: 750px) and (max-width: 799px) {
-  .welcome-Msg{
-    width: 420px;
+  .welcome-Msg,
+  .skills-label {
+    width: 435px;
   }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 749px) {
-  .welcome-Msg{
+  .welcome-Msg, 
+  .skills-label {
     width: 559px;
   }
 }
 
 @media only screen and (min-width: 657px) and (max-width: 699px) {
-  .welcome-Msg{
+  .welcome-Msg, 
+  .skills-label {
     width: 520px;
   }
 }
 
 @media only screen and (min-width: 640px) and (max-width: 656px) {
-  .welcome-Msg{
+  .welcome-Msg, 
+  .skills-label {
     width: 505px;
   }
 }
@@ -406,7 +428,7 @@ span {
 
 @media only screen and (min-width: 565px) and (max-width: 639px) {
   .welcome-Msg{
-    width: 438px;
+    width: 408px;
   }
 }
 
@@ -440,19 +462,44 @@ span {
   }
 }
 
-@media only screen and (max-width:900px) {
+
+@media only screen and (min-width:916px) and (max-width: 950px) {
   .biopic {
-    width: 175px;
+    width: 275px;
+  }
+} 
+  
+@media only screen and (min-width:870px) and (max-width: 915px) {
+  .biopic {
+    width: 265px;
+  }
+} 
+
+@media only screen and (min-width:850px) and (max-width: 869px) {
+  .biopic {
+    width: 235px;
   }
 }
+
+@media only screen and (min-width:800px) and (max-width: 849px) {
+  .biopic {
+    width: 208px;
+  }
+}  
+
+
+@media only screen and (min-width:700px) and (max-width: 799px) {
+  .biopic {
+    width: 215px;
+  }
+}
+
 
 @media only screen and (max-width: 750px) {
   #letsConnect {
     margin-top: 10%;
   }
-  .biopic {
-    width: 150px;
-  }
+
   .welcome-message {
     display: none;
   }
@@ -462,6 +509,18 @@ span {
   #skillsH3,
   .biopic {
     display: block;
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #topContacts{
+    flex-direction: row;
+    margin-right: 20px;
+  }
+  
+  .contact-item{
+    margin-right: 25px;
   }
 }
 
@@ -472,5 +531,96 @@ span {
   }
 }
 
+@media only screen and (min-width: 870px) and (max-width: 1009px) {
+  #skills {
+    width: 550px;
+    float: right;
+    margin-top: -35px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .detailed-msg{
+    font-size: 14px;
+  }
+  
+  .contact-list{
+    flex-direction: row;
+    margin-right: 60px;
+    padding: 0px;
+    margin-top:  10px;
+  }
+  
+  #skills{
+    width: 200px;
+  }
+  
+  .welcome-Msg{
+    width: 300px;
+  }
+  
+  .skills-label{
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+  } 
+}
+
+@media only screen and (max-width: 700px){
+  .nav-ul{
+    display: none;
+  }
+  
+  h1{
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 999px){
+  h1{
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 1250px){
+  .skills-label{
+    width: 700px;
+  }
+}
+
+@media only screen and (min-width: 790px) and (max-width: 960px){
+  #wrapper svg{
+    width: 700px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 789px){
+  #wrapper svg{
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 699px){
+  #wrapper svg{
+    width: 450px;
+  }
+}
+
+@media only screen and (max-width: 549px){
+  #wrapper svg{
+    width: 350px;
+  }
+}
 
 

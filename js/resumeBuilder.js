@@ -1,6 +1,6 @@
 var bio = {
 	"name": "Nazanin Delam  ",
-	"role": "Software Developer ||", 
+	"role": "Software Developer", 
 	"contacts":{
 		"location": {
 			"url":"https://www.google.com/maps/place/San+Francisco,+CA/@37.7577,-122.4376,12z/data=!3m1!4b1!4m2!3m1!1s0x80859a6d00690021:0x4a501367f076adff",
@@ -141,11 +141,6 @@ var education = {
 				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 				$(".education-entry:last").append(formattedOnlineDates);
 				$(".education-entry:last").append(formattedOnlineURL);
-				/*$(".education-entry:last").append(HTMLschoolStart);
-				$(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title) + " " +
-												  HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school));
-				$(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates));
-				$(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url));*/
 			}
 		}
 	}	
@@ -263,111 +258,7 @@ var utils = {
 	}
 }
 
-
-
-var bubbleChartSkills = {
-	"build": function() {
-	  var bubbleChart = new d3.svg.BubbleChart({
-    supportResponsive: true,
-    //container: => use @default
-    size: 600,
-    //viewBoxSize: => use @default
-    innerRadius: 600 / 3.5,
-    //outerRadius: => use @default
-    radiusMin: 50,
-    //radiusMax: use @default
-    //intersectDelta: use @default
-    //intersectInc: use @default
-    //circleColor: use @default
-    data: {
-      items: [
-        {text: "Java", count: "236"},
-        {text: ".Net", count: "382"},
-        {text: "Php", count: "170"},
-        {text: "Ruby", count: "123"},
-        {text: "D", count: "12"},
-        {text: "Python", count: "170"},
-        {text: "C/C++", count: "382"},
-        {text: "Pascal", count: "10"},
-        {text: "Something", count: "170"},
-      ],
-      eval: function (item) {return item.count;},
-      classed: function (item) {return item.text.split(" ").join("");}
-    },
-    plugins: [
-      {
-        name: "central-click",
-        options: {
-          text: "(See more detail)",
-          style: {
-            "font-size": "12px",
-            "font-style": "italic",
-            "font-family": "Source Sans Pro, sans-serif",
-            //"font-weight": "700",
-            "text-anchor": "middle",
-            "fill": "white"
-          },
-          attr: {dy: "65px"},
-          centralClick: function() {
-            alert("Here is more details!!");
-          }
-        }
-      },
-      {
-        name: "lines",
-        options: {
-          format: [
-            {// Line #0
-              textField: "count",
-              classed: {count: true},
-              style: {
-                "font-size": "28px",
-                "font-family": "Source Sans Pro, sans-serif",
-                "text-anchor": "middle",
-                fill: "white"
-              },
-              attr: {
-                dy: "0px",
-                x: function (d) {return d.cx;},
-                y: function (d) {return d.cy;}
-              }
-            },
-            {// Line #1
-              textField: "text",
-              classed: {text: true},
-              style: {
-                "font-size": "14px",
-                "font-family": "Source Sans Pro, sans-serif",
-                "text-anchor": "middle",
-                fill: "white"
-              },
-              attr: {
-                dy: "20px",
-                x: function (d) {return d.cx;},
-                y: function (d) {return d.cy;}
-              }
-            }
-          ],
-          centralFormat: [
-            {// Line #0
-              style: {"font-size": "50px"},
-              attr: {}
-            },
-            {// Line #1
-              style: {"font-size": "30px"},
-              attr: {dy: "40px"}
-            }
-          ]
-        }
-      }]
-  });
-		
-	},
-	"display": function(){
-		$("#skillChart").append(bubbleChart);
-	}
-};
-
+// D3 Skills Chart
 var barChartSkills = {
 	"build": function(){
 
@@ -399,8 +290,10 @@ var barChartSkills = {
 						.range(colors);
 
 		var canvas = d3.select('#wrapper')
+						.classed('flex-box', true)
 						.append('svg')
 						.attr({'width':900,'height':500});
+						
 
 		var grids = canvas.append('g')
 						  .attr('id','grid')
@@ -464,45 +357,19 @@ var barChartSkills = {
 							.data(years)
 							.enter()
 							.append('text')
-							.attr({'x':function(d) {return xscale(d)-50; },'y':function(d,i){ return yscale(i)+35; }})
+							.attr({'x':function(d) {return 40; },'y':function(d,i){ return yscale(i)+35; }})
 							.text(function(d){ return d+"years"; }).style({'fill':'#fff','font-size':'14px'});
 	},
 	"display": function(){
 		$("#skillChart").append(barChart);
 	}
 };
+
 //Display functions
 bio.display();
 work.display();
 projects.display();
 education.display();
 locations.display();
-//bubbleChartSkills.display();
 barChartSkills.display();
-//bubbleChartSkills.build();
 barChartSkills.build();
-
-//$(".biopic").addClass("animated fadeInUp");
-//$(".work-entry").addClass("animated fadeInDown");
-
-var stickyOffset = $('.sticky').offset().top;
-
-$(window).scroll(function(){
-  var sticky = $('.sticky'),
-      scroll = $(window).scrollTop();
-    
-  if (scroll >= stickyOffset){
-	  sticky.addClass('fixed');
-	  sticky.addClass('page-header');
-  } 
-  else{
-	  sticky.removeClass('fixed');
-  } 
-
-});
-
-
-  $('ul.nav-ul li').click(function(e) 
-   { 
-    
-   });

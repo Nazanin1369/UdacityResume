@@ -67,18 +67,21 @@ var barChart = 	'<div id="wrapper"></div>';
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
 $(document).ready(function() {
+  //Menu
   var name = $('#name').html(), scrollTo;
   scrollTo = function (devID) {
-	var pos = $(devID).offset();	
-	window.scrollTo(0, pos.top - 180);
+	  var pos = $(devID).offset();	
+	  window.scrollTo(0, pos.top - 166);
   }
+  
   $(".scroll-a").click( function (e) { 
 		var to;
 		e.preventDefault();
 		to = $(e.target).attr("data-to");
 		scrollTo(to);
-	}
-  );
+	});
+  
+  //Internationalization Button
   $('#internationalizeBtn').click(function() {
     var iName = utils.inName(name) || function(){};
     $('#name').html(iName);  
