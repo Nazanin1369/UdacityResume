@@ -1,3 +1,6 @@
+### To view 
+Resume hosted on github at http://nazanin1369.github.io
+
 ## Udacity Explanation: How do I complete this project?
 
 1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
