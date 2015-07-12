@@ -22,7 +22,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<h1>Hello!  <small class="welcome-message">%data%</small></h1>';
 var HTMLwelcomeMsgDetail = '<p class="detailed-msg">%data%</p>';
 
-var HTMLSkillLabel = '<div class="skills-label"><h3>Skills at a Glance:</h3></div>';
+var HTMLSkillLabel = '<div class="skills-label"><h3 class="skills-h3">Skills at a Glance:</h3></div>';
 var HTMLskills1Start = '<ul id="skills1" class="skills-flex-box"></ul>';
 var HTMLskills2Start = '<ul id="skills2" class="skills-flex-box"></ul>';
 var HTMLskills3Start = '<ul id="skills3" class="skills-flex-box"></ul>';
@@ -39,7 +39,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img src="%data%" class="img-thumbnail img-responsive">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

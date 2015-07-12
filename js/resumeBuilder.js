@@ -220,7 +220,7 @@ var projects = {
 							"indexed webpages, saving cache for improved search functionality. Utilized numerous advanced tools, " +
 							"including UML Maven, MySQL, Hibernate, JSP, Tomcat, and Spring. Analyzed text and performed fuzzy string matching " +
 							"with Apache, Lucene, Tika, and Luke. Developed software with Agile methodology.",
-			"images": ["images/p3.jpg", "images/p5.jpg", "images/p4.png"]
+			"images": ["images/p3.jpg", "images/p5.jpg"]
 		}
 	],
 	"display": function(){
@@ -484,3 +484,24 @@ barChartSkills.build();
 
 //$(".biopic").addClass("animated fadeInUp");
 //$(".work-entry").addClass("animated fadeInDown");
+
+var stickyOffset = $('.sticky').offset().top;
+
+$(window).scroll(function(){
+  var sticky = $('.sticky'),
+      scroll = $(window).scrollTop();
+    
+  if (scroll >= stickyOffset){
+	  sticky.addClass('fixed');
+  } 
+  else{
+	  sticky.removeClass('fixed');
+  } 
+
+});
+
+
+  $('ul.nav-ul li').click(function(e) 
+   { 
+    
+   });

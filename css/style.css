@@ -80,18 +80,19 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  font-weight: 500;
 }
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   color: #F3F3F3!important;
   line-height: 28px;
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 10px;
 }
 
 #skillsH3 {
@@ -197,7 +198,7 @@ ul {
   width: 300px;
   display: none;
   border-radius: 50%;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 img {
@@ -232,9 +233,10 @@ img {
 }
 
 .detailed-msg{
-  font-size:  18px;
+  font-size:  16px;
   color: #F3F3F3!important;
   font-style: italic;
+  font-weight: 500;
   margin-top: -23px;
   margin-left: 30px;
   line-height: 25px;
@@ -242,10 +244,17 @@ img {
 
 .skills-label{
   width: 700px;
+  margin-left: 360px;
+  margin-bottom: -20px;
 }
 
 .skill-item{
   padding: 5px;
+}
+
+.skills-h3{
+  font-size: 16px;
+  color: #F3F3F3!important;
 }
 
 /* Bar chart stuff */
@@ -267,6 +276,82 @@ span {
 #letsConnect {
   text-align: center;
 }
+
+#map {
+  display: block;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+
+.project-entry img {
+  max-width: 240px;
+  max-width: 240px;
+  border: 1px solid #D7D3D3;
+  margin: 10px;
+  width: 100%;
+  height: 150px;
+}
+
+#xaxis .domain {
+		fill:none;
+		stroke:#000;
+}
+#xaxis text, #yaxis text {
+		font-size: 12px;
+}
+  
+#wrapper{
+  text-align: center;
+}  
+
+.fixed {
+  position: fixed;
+  top:0; 
+  left:0;
+  width: 100%; 
+  margin: 0px;
+}
+
+.sticky{
+  background-color: #FFFFFF;
+}
+
+.nav-ul{
+  float: right;
+  
+}
+
+.nav-ul li{
+  float: right;
+  padding-left: 20px;
+  height: 50px;
+}
+
+/*
+* Media
+*/
+
+@media only screen and (min-width: 1550px){
+ .welcome-Msg{
+   width: 800px;
+ }
+}
+
+
+@media only screen and (min-width: 1191px) and (max-width: 1253px) {
+ .welcome-Msg{
+   width: 500px;
+ }
+}
+
 
 @media only screen and (min-width: 968px) and (max-width: 1190px) {
   .welcome-Msg{
@@ -364,20 +449,6 @@ span {
   }
 }
 
-#map {
-  display: block;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
-
-
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
@@ -385,38 +456,12 @@ span {
   }
 }
 
-.project-entry img {
-  max-width: 240px;
-  max-width: 240px;
-  border: 1px solid #D7D3D3;
-  margin: 10px;
-  width: 100%;
-}
-
-#biopic {
-  -vendor-animation-duration: 3s;
-  -vendor-animation-delay: 2s;
-  -vendor-animation-iteration-count: infinite;
+@media only screen and (min-width: 1120px) {
+  #skillsH3,
+  .biopic {
+    width: 356px;
+  }
 }
 
 
-#xaxis .domain {
-		fill:none;
-		stroke:#000;
-}
-#xaxis text, #yaxis text {
-		font-size: 12px;
-}
-  
-#wrapper{
-  text-align: center;
-}  
 
-/*
-Skype
-*/
-.skypeBtn{
-    margin-top: -27px;
-    margin-left: -41px;
-    margin-bottom: -20px;
-}
