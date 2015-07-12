@@ -493,6 +493,7 @@ $(window).scroll(function(){
     
   if (scroll >= stickyOffset){
 	  sticky.addClass('fixed');
+	  sticky.addClass('page-header');
   } 
   else{
 	  sticky.removeClass('fixed');

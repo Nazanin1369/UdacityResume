@@ -142,6 +142,7 @@ a {
 
 /* TODO: Replace with image later */
 #main-header{
+  margin-top: 110px;
   background-color: #01bacb!important;
 }
 
@@ -169,14 +170,22 @@ a {
 }
 
 
+#top-header {
+	background-color: white;
+}
+
+.scroll-a {
+	cursor: pointer;	
+}
+
+
 .top-header-content {
-  padding-top: 2.5%;
+   padding-top: 2.5%;
 }
 
 .main-header-content {
   padding-bottom: 2.5%;
   background-color: antiquewhite;
-
 }
 
 #main-header-left{
