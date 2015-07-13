@@ -118,6 +118,7 @@ a {
   font-size: inherit!important;
 }
 
+
 .gray {
   background-color: #F3F3F3!important;
   padding-bottom: 10px;
@@ -128,15 +129,18 @@ a {
   background-color: #4A4A4A!important;
 }
 
+
 .contactLogo{
   height: 50px;
 }
+
 
 .panelLogo{
   margin-top: -40px;
   margin-left: -28px;
   height: 50px;
 }
+
 
 .role-span{
    margin-left: 10px;
@@ -150,6 +154,7 @@ a {
   background-color: #01bacb!important;
 }
 
+
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -159,6 +164,7 @@ a {
   padding: 10px;
 }
 
+
 .skills-flex-box {
   display: -webkit-flex;
   display: flex;
@@ -167,6 +173,7 @@ a {
   justify-content: space-around;
   padding: 10px;
 }
+
 
 .center-content {
   padding-left: 5%;
@@ -179,6 +186,7 @@ a {
   z-index: 999;
 }
 
+
 .scroll-a {
 	cursor: pointer;	
 }
@@ -186,6 +194,7 @@ a {
 .nav-ul{
   float: right;
 }
+
 
 .nav-ul li{
   float: right;
@@ -203,9 +212,11 @@ a {
   background-color: antiquewhite;
 }
 
+
 #main-header-left{
   width: 40%;
 }
+
 
 #main-header-right{
   width: 100%;
@@ -216,6 +227,7 @@ ul {
   list-style-type: none;
 }
 
+
 .biopic {
   float: left;
   padding: 10px;
@@ -224,14 +236,17 @@ ul {
   margin-top: 50px;
 }
 
+
 img {
   padding: 10px;
 }
+
 
 .header-list{
   width: 800px;
   float: right;
 }
+
 
 .contact-list{
   float:right;
@@ -242,9 +257,11 @@ img {
   margin-right: -40px;
 }
 
+
 .contact-item{
   padding-top: 15px;
 }
+
 
 .welcome-Msg{
   float: left;
@@ -254,6 +271,7 @@ img {
   flex-wrap: wrap;
   margin-top: 15px;
 }
+
 
 .detailed-msg{
   font-size:  16px;
@@ -265,6 +283,7 @@ img {
   line-height: 25px;
 }
 
+
 .skills-label{
   margin-bottom: -20px;
   float: left;
@@ -274,10 +293,12 @@ img {
   padding: 5px;
 }
 
+
 .skills-h3{
   font-size: 16px;
   color: #F3F3F3!important;
 }
+
 
 .fixed {
   position: fixed;
@@ -299,9 +320,11 @@ img {
   display: inline-block;
 }
 
+
 span {
   padding: 5px;
 }
+
 
 #letsConnect {
   text-align: center;
@@ -330,10 +353,13 @@ span {
   height: 150px;
 }
 
+
 #xaxis .domain {
 		fill:none;
 		stroke:#000;
 }
+
+
 #xaxis text, #yaxis text {
 		font-size: 12px;
 }
@@ -347,7 +373,6 @@ span {
    width: 800px;
  }
 }
-
 
 @media only screen and (min-width: 1191px) and (max-width: 1253px) {
  .welcome-Msg,
@@ -454,7 +479,6 @@ span {
     margin-top: 5%;
   }
 }
-
 
 @media only screen and (min-width:916px) and (max-width: 950px) {
   .biopic {
@@ -625,7 +649,6 @@ span {
 }
 
 @media only screen and (min-width: 351) and (max-width: 400px){
-   
   .contact-item{
     margin-right: 10px;
   }
@@ -636,7 +659,6 @@ span {
 }
 
 @media only screen and (max-width: 350px){
-   
   .contact-item{
     margin-right: -2px;
     margin-bottom: -16px;
@@ -655,7 +677,6 @@ span {
   h1{
     font-size: 21px;
   }
-  
   
   .biopic{
     width: 160px;
