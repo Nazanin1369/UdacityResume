@@ -283,7 +283,7 @@ var barChartSkills = {
 		});
 		
 		var margin = {top: 20, right: 20, bottom: 30, left: 60},
-		ww = document.getElementById("skillChart").clientWidth,
+		ww = document.getElementById("wrapper").clientWidth,
 		width = ww - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
 
