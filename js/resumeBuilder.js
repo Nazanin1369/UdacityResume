@@ -281,6 +281,11 @@ var barChartSkills = {
 			if(i>0){ return i; }
 			else if(i===0){ return "10";}
 		});
+		
+		var margin = {top: 20, right: 20, bottom: 30, left: 60},
+		ww = document.getElementById("skillChart").clientWidth,
+		width = ww - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
 
 		var xscale = d3.scale.linear()
 						.domain([0,10])
@@ -295,14 +300,14 @@ var barChartSkills = {
 						.range(colors);
 
 		var canvas = d3.select('#wrapper')
-						.classed('flex-box', true)
 						.append('svg')
-						.attr({'width':900,'height':500});
+						.attr("width", width + margin.left + margin.right)
+    					.attr("height", height + margin.top + margin.bottom);
 						
 
 		var grids = canvas.append('g')
 						  .attr('id','grid')
-						  .attr('transform','translate(150,10)')
+						  .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 						  .selectAll('line')
 						  .data(grid)
 						  .enter()
@@ -329,17 +334,17 @@ var barChartSkills = {
 				.tickValues(d3.range(17));
 
 		var y_xis = canvas.append('g')
-						  .attr("transform", "translate(150,0)")
+						  .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 						  .attr('id','yaxis')
 						  .call(yAxis);
 
 		var x_xis = canvas.append('g')
-						  .attr("transform", "translate(150,480)")
+						  .attr("transform", "translate(" + margin.left + ",480)")
 						  .attr('id','xaxis')
 						  .call(xAxis);
 
 		var chart = canvas.append('g')
-							.attr("transform", "translate(150,0)")
+							.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 							.attr('id','bars')
 							.selectAll('rect')
 							.data(years)
