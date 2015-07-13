@@ -266,13 +266,18 @@ var utils = {
 // D3 Skills Chart
 var barChartSkills = {
 	"build": function(){
-
+		
 		var skills = ['', 'Java', 'JavaScript', 'OO programming', 'AngularJS', 'Algorithms', 'Data Visualization',
 		 'JQuery', 'HTML5', 'Material Design', 'Design Pattern', 'AJAX', 'Web Application', 'CSS', 'Hibernate', 'Git'];
 		var years = [6, 5, 6, 1, 4, 2, 5, 3, 1, 7.5, 3.5, 6.5, 5.5, 2.5, 3];
 
 		var colors = ['#0000b4','#0082ca','#0094ff','#0d4bcf','#0066AE','#074285','#00187B','#285964','#405F83','#416545','#4D7069','#6E9985','#7EBC89','#0283AF','#79BCBF','#99C19E'];
-
+		
+		var margin = {top: 20, right: 20, bottom: 30, left: 60},
+		ww = document.getElementById("wrapper").clientWidth,
+		width = ww - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
+		
 		var grid = d3.range(25).map(function(i){
 			return {'x1':0,'y1':0,'x2':0,'y2':480};
 		});
@@ -282,14 +287,9 @@ var barChartSkills = {
 			else if(i===0){ return "10";}
 		});
 		
-		var margin = {top: 20, right: 20, bottom: 30, left: 60},
-		ww = document.getElementById("wrapper").clientWidth,
-		width = ww - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
-
 		var xscale = d3.scale.linear()
 						.domain([0,10])
-						.range([0,722]);
+						.range([0, width]);
 
 		var yscale = d3.scale.linear()
 						.domain([0,skills.length])
@@ -371,7 +371,13 @@ var barChartSkills = {
 							.text(function(d){ return d+"years"; }).style({'fill':'#fff','font-size':'14px'});
 	},
 	"display": function(){
-		$("#skillChart").append(barChart);
+		$("#wrapper").append(barChart);
+	},
+	"setup": function(){
+		var margin = {top: 20, right: 20, bottom: 30, left: 60},
+		ww = document.getElementById("wrapper").clientWidth,
+		width = ww - margin.left - margin.right,
+		height = 500 - margin.top - margin.bottom;
 	}
 };
 
@@ -383,3 +389,4 @@ education.display();
 locations.display();
 barChartSkills.display();
 barChartSkills.build();
+

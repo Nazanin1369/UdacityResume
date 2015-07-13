@@ -220,7 +220,6 @@ ul {
   float: left;
   padding: 10px;
   width: 300px;
-  display: none;
   border-radius: 50%;
   margin-top: 50px;
 }
@@ -484,7 +483,7 @@ span {
 
 @media only screen and (min-width:700px) and (max-width: 799px) {
   .biopic {
-    width: 215px;
+    width: 165px;
   }
 }
 
@@ -499,17 +498,22 @@ span {
   }
 }
 
-@media only screen and (min-width: 550px) {
-  #skillsH3,
+@media only screen and (min-width: 550px) and (max-width: 650px){
   .biopic {
-    display: block;
-    width: 160px;
+    width: 275px;
   }
 }
 
+
+@media only screen and (min-width: 651px) and (max-width: 750px){
+  .biopic {
+    width: 320px;
+  }
+}
+
+
 @media only screen and (max-width: 750px) {
   #topContacts{
-    flex-direction: row;
     margin-right: 20px;
   }
   
@@ -527,7 +531,7 @@ span {
 
 @media only screen and (min-width: 870px) and (max-width: 1009px) {
   #skills {
-    width: 550px;
+    width: 575px;
     float: right;
     margin-top: -35px;
   }
@@ -540,7 +544,7 @@ span {
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 450px) and (max-width: 500px) {
   h1 {
     font-size: 18px;
   }
@@ -550,7 +554,6 @@ span {
   }
   
   .contact-list{
-    flex-direction: row;
     margin-right: 60px;
     padding: 0px;
     margin-top:  10px;
@@ -569,6 +572,10 @@ span {
     float: left;
     margin-left: 20px;
   } 
+  
+  .biopic{
+    width: 250px;
+  }
 }
 
 @media only screen and (max-width: 700px){
@@ -617,12 +624,90 @@ span {
   }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (min-width: 351) and (max-width: 400px){
    
   .contact-item{
     margin-right: 10px;
   }
+  
+  #bars text{
+    display: none;
+  }
 }
+
+@media only screen and (max-width: 350px){
+   
+  .contact-item{
+    margin-right: -2px;
+    margin-bottom: -16px;
+  }
+  
+  .welcome-Msg{
+    width: 220px;
+    margin-top: -14px;
+  }
+  
+  .detailed-msg{
+    margin-left: 16px;
+    font-size: 14px;
+  }
+  
+  h1{
+    font-size: 21px;
+  }
+  
+  
+  .biopic{
+    width: 160px;
+    margin-left: 63px;
+    margin-top: 75px;
+  }
+  
+  #topContacts{
+    margin-left: 0px;
+    flex-direction: row;
+    margin-top: -265px;
+  }
+  
+  .skills-flex-box{
+    flex-direction: row;
+  }
+  
+  h1{
+    font-size: 20px;
+  }
+  
+  .skills-h3{
+    font-size: 17px;
+  }
+}
+
+
+@media only screen and (min-width: 351px) and (max-width: 450px){
+  .biopic{
+    width: 160px;
+  }
+  
+  .contact-item{
+    margin-right: -6px;
+  }
+  
+    h1{
+    font-size: 20px;
+  }
+  
+    
+  .skills-flex-box{
+    flex-direction: row;
+  }
+  
+  .welcome-Msg{
+    margin-top: -14px;
+  }
+}
+
+
+
 
 
 

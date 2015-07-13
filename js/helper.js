@@ -80,6 +80,12 @@ $(document).ready(function() {
 		to = $(e.target).attr("data-to");
 		scrollTo(to);
 	});
+
+  //resizing the d3 chart on resize
+  $( window ).resize(function() {
+    $("#wrapper").empty();
+     barChartSkills.build();
+  });
   
   //Internationalization Button
   $('#internationalizeBtn').click(function() {
