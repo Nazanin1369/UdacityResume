@@ -1,7 +1,7 @@
 // Bio
 var bio = {
 	"name": "Nazanin Delam  ",
-	"role": "Software Developer",
+	"role": "Software Developer", 
 	"contacts":{
 		"location": {
 			"url":"https://www.google.com/maps/place/San+Francisco,+CA/@37.7577,-122.4376,12z/data=!3m1!4b1!4m2!3m1!1s0x80859a6d00690021:0x4a501367f076adff",
@@ -9,17 +9,17 @@ var bio = {
 			"title": "San Francisco, CA"
 		},
 		"email": {
-			"url":"mailto:nazanin1427@gmail.com",
+			"url":"mailto:nazanin1427@gmail.com", 
 			"src": "images/email.svg",
 			"title": "nazanin1427@gmail.com"
 		},
 		"github": {
-			"url":"https://github.com/Nazanin1369",
+			"url":"https://github.com/Nazanin1369", 
 			"src": "images/github.svg",
 			"title": "Nazanin1369"
 		},
 		"linkedin": {
-			"url":"https://www.linkedin.com/in/nazanindelam",
+			"url":"https://www.linkedin.com/in/nazanindelam", 
 			"src": "images/linkedIn.svg",
 			"title": "nazanindelam"
 		}
@@ -44,7 +44,7 @@ var bio = {
 				(bio.contacts[i].title) && (formattedcontact = formattedcontact.replace("%title%", bio.contacts[i].title));
 				$("#main-header").append($("#main-header-right").append($("#topContacts").append(formattedcontact)));
 				$("#footerContacts").append(formattedcontact);
-			}
+			}	
 			$("a").tooltip({'placement': 'left','content':'html'});
 		}
 		if(bio.welcomeMessage){
@@ -52,11 +52,11 @@ var bio = {
 			$("#main-header").append($("#main-header-right").append($("#welcomeMsgDetail").
 				append(HTMLwelcomeMsgDetail.replace("%data%", bio.detailedMessage))));
 		}
-
+		
 		if(bio.bioPic){
 			$("#main-header").append($("#main-header-left").append(HTMLbioPic.replace("%data%", bio.bioPic)));
 		}
-		(bio.skills1.length > 0 || bio.skills1.length > 0 || bio.skills1.length > 0) &&
+		(bio.skills1.length > 0 || bio.skills1.length > 0 || bio.skills1.length > 0) && 
 				($("#main-header").append($("#main-header-right").append(HTMLSkillLabel)));
 
 		if(bio.skills1.length > 0){
@@ -117,7 +117,7 @@ var education = {
 	"display": function(){
 		if(education.schools.length > 0){
 			for(var school in education.schools){
-				$("#education").append(HTMLschoolStart);
+				$("#education").append(HTMLschoolStart); 
 				$(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[school].name) + " " +
 												  HTMLschoolDegree.replace("%data%", education.schools[school].degree));
 				$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[school].dates));
@@ -127,7 +127,7 @@ var education = {
 					majors += education.schools[school].majors[major] + " ";
 				}
 				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%",majors));
-
+				
 			}
 		}
 		if(education.onlineCourses.length > 0){
@@ -138,13 +138,13 @@ var education = {
 				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
 				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
 				var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url).replace("#", education.onlineCourses[onlineCourse].url);
-
+				
 				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 				$(".education-entry:last").append(formattedOnlineDates);
 				$(".education-entry:last").append(formattedOnlineURL);
 			}
 		}
-	}
+	}	
 };
 
 //Work
@@ -178,19 +178,19 @@ var work = {
       "dates": "Jun 2009 - Jun 2012",
       "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
     }
-	],
+	], 
 	"display": function(){
 		if(work.jobs.length > 0){
 			for(var job in work.jobs){
 				$("#workExperience").append(HTMLworkStart);
-				$(".work-entry:last").append( HTMLworkEmployer.replace("%data%", work.jobs[job].employer + " " +
-										 HTMLworkTitle.replace("%data%", work.jobs[job].title)));
-				$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
-				$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
-				$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
-			}
+				$(".work-entry:last").append( HTMLworkEmployer.replace("%data%", work.jobs[job].employer + " " + 
+										 HTMLworkTitle.replace("%data%", work.jobs[job].title)));						 
+				$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));	
+				$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));	
+				$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));								 
+			}	
 		}
-	}
+	}	
 };
 
 //Projects
@@ -200,7 +200,7 @@ var projects = {
 			"title": "Hospital Information System (HIS)",
 			"dates": 2012,
 			"description" : "Hospital Information System for Clinical part of Airline company",
-			"images": ["images/p1.jpg"]
+			"images": ["images/p1.jpg"]				 
 		},
 		{
 			"title": "Accountong System",
@@ -214,7 +214,7 @@ var projects = {
 		{
 			"title": "Search Engine",
 			"dates": 2014,
-			"description" : "Designed and implemented scalable, high performance search engine that analyzed and " +
+			"description" : "Designed and implemented scalable, high performance search engine that analyzed and " + 
 							"indexed webpages, saving cache for improved search functionality. Utilized numerous advanced tools, " +
 							"including UML Maven, MySQL, Hibernate, JSP, Tomcat, and Spring. Analyzed text and performed fuzzy string matching " +
 							"with Apache, Lucene, Tika, and Luke. Developed software with Agile methodology.",
@@ -230,11 +230,11 @@ var projects = {
 				$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
 				for(var j in projects.projects[i].images){
 					$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
-				}
+				}	
 			}
 		}
-
-	}
+		
+	}	
 };
 
 //Location
@@ -249,7 +249,7 @@ var locations = {
 	"display": function(){
 		$("#main").append(internationalizeButton);
 		$("#mapDiv").append(googleMap);
-	}
+	}	
 };
 
 //Utility methods
@@ -266,18 +266,18 @@ var utils = {
 // D3 Skills Chart
 var barChartSkills = {
 	"build": function(){
-
+		
 		var skills = ['', 'Java', 'JavaScript', 'OO programming', 'AngularJS', 'Algorithms', 'Data Visualization',
 		 'JQuery', 'HTML5', 'Material Design', 'Design Pattern', 'AJAX', 'Web Application', 'CSS', 'Hibernate', 'Git'];
 		var years = [6, 5, 6, 1, 4, 2, 5, 3, 1, 7.5, 3.5, 6.5, 5.5, 2.5, 3];
 
 		var colors = ['#0000b4','#0082ca','#0094ff','#0d4bcf','#0066AE','#074285','#00187B','#285964','#405F83','#416545','#4D7069','#6E9985','#7EBC89','#0283AF','#79BCBF','#99C19E'];
-
+		
 		var margin = {top: 20, right: 20, bottom: 30, left: 60},
 		ww = document.getElementById("wrapper").clientWidth,
 		width = ww - margin.left - margin.right,
 		height = 500 - margin.top - margin.bottom;
-
+		
 		var grid = d3.range(25).map(function(i){
 			return {'x1':0,'y1':0,'x2':0,'y2':480};
 		});
@@ -286,7 +286,7 @@ var barChartSkills = {
 			if(i>0){ return i; }
 			else if(i===0){ return "10";}
 		});
-
+		
 		var xscale = d3.scale.linear()
 						.domain([0,10])
 						.range([0, width]);
@@ -303,7 +303,7 @@ var barChartSkills = {
 						.append('svg')
 						.attr("width", width + margin.left + margin.right)
     					.attr("height", height + margin.top + margin.bottom);
-
+						
 
 		var grids = canvas.append('g')
 						  .attr('id','grid')
@@ -359,7 +359,7 @@ var barChartSkills = {
 		var transit = d3.select("svg").selectAll("rect")
 						    .data(years)
 						    .transition()
-						    .duration(1000)
+						    .duration(1000) 
 						    .attr("width", function(d) {return xscale(d); });
 
 		var transitext = d3.select('#bars')

@@ -70,11 +70,11 @@ $(document).ready(function() {
   //Menu
   var name = $('#name').html(), scrollTo;
   scrollTo = function (devID) {
-	  var pos = $(devID).offset();
+	  var pos = $(devID).offset();	
 	  window.scrollTo(0, pos.top - 166);
   }
-
-  $(".scroll-a").click( function (e) {
+  
+  $(".scroll-a").click( function (e) { 
 		var to;
 		e.preventDefault();
 		to = $(e.target).attr("data-to");
@@ -86,11 +86,11 @@ $(document).ready(function() {
     $("#wrapper").empty();
      barChartSkills.build();
   });
-
+  
   //Internationalization Button
   $('#internationalizeBtn').click(function() {
     var iName = utils.inName(name) || function(){};
-    $('#name').html(iName);
+    $('#name').html(iName);  
   });
 });
 
